@@ -48,8 +48,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FileWriter.cs" />
+    <Compile Include="Logger.cs" />
+    <Compile Include="PageLoader.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ResponseParser.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

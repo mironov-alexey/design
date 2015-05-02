@@ -10,10 +10,11 @@ namespace FluentTask
 {
     public class Behavior
     {
-        private readonly List<Action> actions = new List<Action>();
+        private readonly List<Action> actions;
 
         public Behavior()
         {
+            actions = new List<Action>();
         }
         public Behavior(IEnumerable<Action> actions)
         {
@@ -29,11 +30,12 @@ namespace FluentTask
 
         public Behavior UntilKeyPressed(Action<Behavior> inner)
         {
-            actions.Add(() => { WaitForKeyPress(inner);});
+//            Wait(inner);
+            actions.Add(() => { Wait(inner);});
             return this;
         }
 
-        private static void WaitForKeyPress(Action<Behavior> inner)
+        private static void Wait(Action<Behavior> inner)
         {
             while (!Console.KeyAvailable)
             {
